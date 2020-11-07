@@ -3,20 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DnD</title>
+    <title>Drag and drop</title>
     <link rel="stylesheet" href="index.css">
     <script src="canvasParticles.js"></script>
     <script defer src="index.js"></script>
 </head>
 
 <body id="da">
-    <!-- <canvas id="background"></canvas> -->
-    <h1>DnD</h1>
-    <div id="text">Drag your files and drop them here. </div>
+    <canvas id="background"></canvas>
+    <div id="border"></div>
+    <h1>Drag and drop</h1>
+    <div id="text">
+        <span>Drag your files and drop them here. <b id="filename"></b></span>
+    </div>
     <form action="upload" method="post" enctype="multipart/form-data">
         <input id="filetoupload" type="file" name="filetoupload">
+        <button>Send</button>
     </form>
-    <div></div>
 </body>
 
 </html>

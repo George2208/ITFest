@@ -11,19 +11,50 @@
 }
 
 h1 {
+    font-size: 35px;
     text-align: center;
     margin-top: 50px;
 }
 
 #text {
+    font-size: 20px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #filetoupload {
+    opacity: 0;
     position: absolute;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    top: 50%; left: 50%;
+    width: 60vw; height: 40vh;
+    transform: translate(-50%, -50%);
+}
+
+#border {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 60vw; height: 40vh;
+    transform: translate(-50%, -50%);
+    border: 1px dotted black;
+    border-radius: 30px;
+}
+
+button {
+    position: absolute;
+    font-size: 25px;
+    padding: 10px;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
 }

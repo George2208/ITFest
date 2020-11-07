@@ -1,10 +1,10 @@
 const app = require("express")()
 const uid = require("uid")
 const fs = require("fs")
-const child_process = require("child_process");
 app.use(require("express-fileupload")({ createParentPath: true }));
 app.get("/", (req, res) => { res.sendFile(__dirname + "/Public/index.html") })
 app.get("/index.js", (req, res) => { res.sendFile(__dirname + "/Public/index.js") })
+app.get("/canvasParticles.js", (req, res) => { res.sendFile(__dirname + "/Public/canvasParticles.js") })
 app.get("/index.css", (req, res) => { res.sendFile(__dirname + "/Public/index.css") })
 
 let queue = [], dict = {}
@@ -17,7 +17,7 @@ setInterval(() => {
         queue.shift()
         console.log(2, queue, dict);
     }
-}, 5000)
+}, 60000)
 
 app.post("/upload", (req, res) => {
     name = uid.uid(4)
@@ -32,6 +32,8 @@ app.get("*", (req, res) => {
     let url = req.url.substring(1);
     if(fs.existsSync(__dirname+"/uploads/"+url))
         res.download(__dirname+"/uploads/"+url, dict[url])
+    else
+        res.status(404).send()
     console.log(__dirname+"/uploads/"+url);
 })
 

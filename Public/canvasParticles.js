@@ -92,17 +92,17 @@ function CanvasBackground (id, options) {
                     particlesArray.push(new Particle(Math.random() * ctx.canvas.width, Math.random()*ctx.canvas.height, Math.random()*2-1, Math.random()*2-1))
     }}}
     options = Object.assign({}, {
-        lineOpacity: 1,
-        pointOpacity: 1,
-        pointVisibility: 0.3,
+        lineOpacity: 0.2,
+        pointOpacity: 0.2,
+        pointVisibility: 0.2,
         lineColor: [0, 0, 0],
         lineWidth: 1,
         pointColor: [0, 0, 0],
         pointRadius: 1.5,
-        mouseActivationRadius: 300,
-        pointActivationRadius: 200,
-        pointNumber: 100,
-        pointSpeed: 2
+        mouseActivationRadius: 400,
+        pointActivationRadius: 300,
+        pointNumber: 40,
+        pointSpeed: 0.5
     }, options)
     let [ctx,particlesArray,mouse] = [document.getElementById(id).getContext("2d"),[],{x:null,y:null}]
     ctx.canvas.width = ctx.canvas.getBoundingClientRect().width, ctx.canvas.height = ctx.canvas.getBoundingClientRect().height
